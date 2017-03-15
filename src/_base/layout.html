@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
     {% include './app-meta.html' %}
-
-    <link href="/dist/css/fonts.css" rel="stylesheet">
-    <link href="/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="/assets/css/src/docs.css" rel="stylesheet">
+    <!-- critical css -->
+    <script src="/assets/js/vendor/loadcss.js"></script>
+    <script> loadCSS('/assets/css/src/docs.css'); </script>
+    <script> loadCSS('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'); </script>
+    <script> loadCSS('/dist/css/fonts.css'); </script>
+    <noscript>
+        <link rel="stylesheet" href="/assets/css/src/docs.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/dist/css/fonts.css">
+    </noscript>
 
     {% block head_extra %}{% endblock %}
 </head>
@@ -15,9 +21,11 @@
     {% block body %}{% endblock %}
 
     <script src="/assets/js/vendor/jquery.min.js"></script>
-    <script src="/dist/js/bootstrap.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <script src="/assets/js/docs.min.js"></script>
     <script src="/assets/js/ie10-viewport-bug-workaround.js"></script>
+
+
     {% block scripts_extra %}{% endblock %}
 </body>
 </html>
