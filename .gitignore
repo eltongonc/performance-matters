@@ -9,3 +9,6 @@
 
 # npm cruft
 npm-debug.log
+
+# ios junk
+.DS_Store
