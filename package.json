@@ -11,6 +11,7 @@
   "license": "ISC",
   "devDependencies": {
     "compression": "^1.6.2",
+    "critical": "^0.8.4",
     "cssmin": "^0.4.3",
     "express-minify": "^0.2.0",
     "gulp": "^3.9.1",

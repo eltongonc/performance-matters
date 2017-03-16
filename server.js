@@ -4,6 +4,7 @@ const path = require('path');
 const routeStatic = require('./lib/route-static');
 const redirectIndices = require('./lib/redirect-indices');
 const compression = require('compression');
+const critical = require('critical');
 
 const app = express();
 const baseDir = 'src/';
@@ -16,6 +17,22 @@ app.use((req, res, next) => { res.removeHeader('X-Powered-By'); next(); });
 // compression
 app.use(compression());
 
+// critical css
+critical.generate({
+    inline: false,
+    base: 'src/',
+    // HTML source file
+    src: 'index.html',
+    css: [
+        'src/build/bundeld.css',
+        'src/dist/css/bootstrap.css'
+    ],
+    width: 1300,
+    height: 900,
+    dest: 'build/critical.css',
+    minify: true,
+    extract: true,
+});
 
 // static routes
 app.use(routeStatic);
