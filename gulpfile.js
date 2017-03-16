@@ -50,12 +50,6 @@ gulp.task('revision:js', function(cb) {
         gulp.dest(config.dest.assets)
     ],cb);
 });
-gulp.task('revision:img', function(cb) {
-    pump([
-        gulp.src(config.src.assets.img),
-        concat('bundeld.png'),
-        gulp.dest(config.dest.assets)
-    ],cb);
-});
+
 
 gulp.task('default', ['revision:css', 'revision:js']);

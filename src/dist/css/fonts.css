@@ -1,5 +1,5 @@
 html {
-    font-family: 'source_sans_pro', sans-serif;
+    font-family: sans-serif;
 }
 
 @font-face {
@@ -32,4 +32,8 @@ html {
     url('/dist/fonts/sourcesanspro-regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
+}
+
+html.fonts-loaded {
+    font-family: 'source_sans_pro', sans-serif;
 }
