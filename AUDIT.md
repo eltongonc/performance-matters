@@ -8,7 +8,7 @@ All the tests were done on a slow internet connection Regular 2g (300ms, 250kb/s
 ### Before
 The site took 42 seconds to completely load and 19.59s to load the DOM(Document Object Model HTML) contents.
 
-![Before](https://github.com/eltongonc/performance-matters/blob/master/screenshots/begin-unedit.png)
+![Before](https://github.com/eltongonc/performance-matters/blob/master/screenshots/begin-unedited.png)
 
 As seen on the picture above, the images and fonts are the biggest in size and take the most time to load.
 
