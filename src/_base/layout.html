@@ -5,7 +5,7 @@
     <!-- critical css -->
     {% include './critical.html' %}
 
-    <script src="/assets/js/vendor/loadcss.js"></script>
+    {% include './loadcss.html' %}
     <script> loadCSS('/build/bundeld.css'); </script>
     <noscript>
         <link rel="stylesheet" href="/build/bundeld.css">
@@ -14,7 +14,8 @@
 
     <!-- non blocking js -->
     <!-- async fonts -->
-    <script src="/assets/js/vendor/fontfaceobserver.js" charset="utf-8" defer></script>
+    {% include './fontfaceobserver.html' %}
+
     <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc=" crossorigin="anonymous" defer></script>
 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous" defer></script>
@@ -26,8 +27,6 @@
 </head>
 
 <body {% block body_attributes %}{% endblock %}>
-
-
     {% block body %}{% endblock %}
 
 

@@ -15,13 +15,15 @@ app.set('etag', false);
 app.use((req, res, next) => { res.removeHeader('X-Powered-By'); next(); });
 
 // compression
-app.use(compression());
+app.use(compression({
+    threshhold: 0,
+    filter: ()=> true
+}));
 
-// critical css
+// critical css generator
 critical.generate({
     inline: false,
     base: 'src/',
-    // HTML source file
     src: 'index.html',
     css: [
         'src/build/bundeld.css',
