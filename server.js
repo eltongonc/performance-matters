@@ -4,9 +4,6 @@ const path = require('path');
 const routeStatic = require('./lib/route-static');
 const redirectIndices = require('./lib/redirect-indices');
 const compression = require('compression');
-const minify = require('express-minify');
-const myUglifyJS = require('uglify-js');
-const myCssmin = require('cssmin');
 
 const app = express();
 const baseDir = 'src/';
@@ -18,11 +15,7 @@ app.use((req, res, next) => { res.removeHeader('X-Powered-By'); next(); });
 
 // compression
 app.use(compression());
-app.use(minify({
-    uglifyJS: myUglifyJS,
-    cssmin: myCssmin,
-    // cache: path.join(__dirname, baseDir+"/cache")
-}));
+
 
 // static routes
 app.use(routeStatic);
